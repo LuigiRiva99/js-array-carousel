@@ -39,21 +39,28 @@ itemList[imagePositionList].classList.add('active');
 const arrowNextDomElement= document.querySelector('.next');
 
 arrowNextDomElement.addEventListener('click', function(){
-    itemList[imagePositionList].classList.remove('active');
-    imagePositionList= imagePositionList + 1
-    itemList[imagePositionList].classList.add('active');
+    if (imagePositionList === 4) {
+        itemList[imagePositionList].classList.remove('active');
+        imagePositionList = 0
+        itemList[imagePositionList].classList.add('active');
+    } else {
+        itemList[imagePositionList].classList.remove('active');
+        imagePositionList= imagePositionList + 1
+        itemList[imagePositionList].classList.add('active');
+    }
 })
 
 const arrowBeforeDomElement= document.querySelector('.before');
 
 arrowBeforeDomElement.addEventListener('click', function(){
-    itemList[imagePositionList].classList.remove('active');
-    imagePositionList= imagePositionList - 1
-    itemList[imagePositionList].classList.add('active');
+    
+    if (imagePositionList === 0) {
+        itemList[imagePositionList].classList.remove('active');
+        imagePositionList = imagesList.length - 1
+        itemList[imagePositionList].classList.add('active');
+    } else {
+        itemList[imagePositionList].classList.remove('active');
+        imagePositionList= imagePositionList - 1
+        itemList[imagePositionList].classList.add('active');
+    }
 })
-
-
-
-
-
-
