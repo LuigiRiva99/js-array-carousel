@@ -28,7 +28,32 @@ imagesContainerDomElement.innerHTML= mainImage;
 const itemList= imagesContainerDomElement.querySelectorAll('.item');
 
 //aggiungo una classe alla prima immagine della lista
-itemList[0].classList.add('active')
+let imagePositionList = 0;
+itemList[imagePositionList].classList.add('active');
+
+//quando l'utente clicca sulla freccia l'immagine visualizzata cambia
+    //prendo l'icona della freccia dal dom
+    //aggiungo un eventlistener
+    //ogni volta che avviene il click la classe 'active' deve passare un div a quello successivo
+
+const arrowNextDomElement= document.querySelector('.next');
+
+arrowNextDomElement.addEventListener('click', function(){
+    itemList[imagePositionList].classList.remove('active');
+    imagePositionList= imagePositionList + 1
+    itemList[imagePositionList].classList.add('active');
+})
+
+const arrowBeforeDomElement= document.querySelector('.before');
+
+arrowBeforeDomElement.addEventListener('click', function(){
+    itemList[imagePositionList].classList.remove('active');
+    imagePositionList= imagePositionList - 1
+    itemList[imagePositionList].classList.add('active');
+})
+
+
+
 
 
 
