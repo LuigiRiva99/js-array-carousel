@@ -29,14 +29,17 @@ img {
 
 .before, .next{
     position: absolute;
-    top: 50%;
-    left: 3%;
+    top: 25%;
+    left: 10%;
     transform: translate(-50%,-50%);
     border-radius: 50%;
+    z-index: 2;
+    color: white;
 }
 
 .next {
-    left: 97%;
+    left: 10%;
+    top: 75%;
 }
 
 .active {
@@ -50,4 +53,26 @@ img {
 .before:hover, .next:hover {
     cursor: pointer;
     background-color: rgb(174, 173, 173);
+}
+
+.thumbnails {
+    height: 100%;
+    width: 200px;
+    z-index: 1;
+    position: absolute;
+    height: 550px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.thumbnail_image {
+    height: 20%;
+}
+
+.opacity_active {
+    opacity: 0.4;
+}
+
+.blue_border {
+    border: 2px solid rgb(2, 106, 242);
 }
